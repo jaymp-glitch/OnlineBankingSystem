@@ -1,0 +1,77 @@
+﻿@model OnlineBanking.DBModel.AccountDetail
+
+@{
+    ViewBag.Title = "UserHomePage";
+}
+
+
+
+<div>
+    <h4>Account Details</h4>
+    <hr />
+    <table class="table" style="width:500px;margin-left:150px">
+        <tr>
+            <td style="color:blueviolet">
+                @Html.DisplayFor(model => model.UserName)
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Account Number")
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AccountNumber)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Available Balance")
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.BalanceAvailable)
+            </td>
+        </tr>
+    </table>
+</div>
+<div style="margin-left:150px">
+    <table class="table table-hover table-bordered" style="width:500px;background-color:gainsboro;border-width:2px;border-color:darkgray">
+        <tr>
+            <td>
+                @Html.ActionLink("Recent Transactions", "RecentTransaction", "User",new {id=Model.UserID })
+            </td>
+            <td>
+                @Html.ActionLink("CustomTransaction", "CustomTransaction", "User")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Fund Transfer", "FundTransfer", "User")
+            </td>
+            <td>
+                @Html.ActionLink("Change Password", "ChangePassword", "User")
+            </td>
+        </tr>
+    </table>
+    @*<p>
+        @Html.ActionLink("Recent Transactions", "Edit", new { /* id = Model.PrimaryKey */ }) <br />
+        @Html.ActionLink("Search Transaction", "Index")
+    </p>*@
+</div>
+
+<style>
+    body{
+        background-color:gainsboro;
+    }
+    dd {
+        display: block;
+        margin-left: 40px;
+        color:rebeccapurple;
+    }
+    dt {
+        display: block;
+        margin-left: 50px;
+        text-align:right;
+    }
+</style>

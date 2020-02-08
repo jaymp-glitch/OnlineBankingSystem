@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "ManageCustomer";
+}
+
+<h3>Enter Customer UserID below to search the customer details</h3>
+@using (Html.BeginForm("SearchCustomer", "Admin", FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.Label("UserID")
+        @Html.TextBox("UserID")
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-1">
+            <input type="submit" value="Search" class="btn btn-default" style="width:90px" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Home", "AdminHomePage")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

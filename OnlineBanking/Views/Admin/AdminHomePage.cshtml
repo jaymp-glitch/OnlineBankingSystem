@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "AdminHomePage";
+}
+<h3>
+    Admin Home Page
+</h3>
+<table class="table table-hover" style="width:500px;align-content:center;">
+    <tr>
+        <td>
+
+            @Html.ActionLink("Register New Customer", "CustomerRegistrationForm", "Admin")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Manage Customer Details", "ManageCustomer", "Admin")
+        </td>
+    </tr>
+</table>
+

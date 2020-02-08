@@ -1,0 +1,31 @@
+﻿@if (Session["UserID"] == null)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Login", "Login", "Account", null, null)
+        </li>
+    </ul>
+}
+else if ((Session["UserType"].ToString() == "Admin") && (Session["UserID"] != null))
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("" + Session["UserName"], "AdminHomePage", "Admin", null, null)
+        </li>
+        <li>
+            @Html.ActionLink("Logout", "Logout", "Account", null, null)
+        </li>
+    </ul>
+}
+else if ((Session["UserType"].ToString() == "Customer") && (Session["UserID"] != null))
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("" + Session["UserName"], "UserHomePage", "User", null, null)
+        </li>
+        <li>
+            @Html.ActionLink("Logout", "Logout", "Account", null, null)
+        </li>
+    </ul>
+
+}
