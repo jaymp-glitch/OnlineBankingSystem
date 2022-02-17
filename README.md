@@ -7,6 +7,7 @@ C#
 EntityFramework
 HTML
 JavaScript
+CSS
 
 Online Banking system-Key functionalities:-
 
